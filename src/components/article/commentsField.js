@@ -16,7 +16,7 @@ export default async (e) => {
 
   const outputList = createUl(comments);
 
-  currentComments.appendChild(outputList);
+  commentsField.appendChild(outputList);
   commentsField.style.width = '600px';
   commentsField.style.height = '600px';
   commentsField.style.marginTop = '-650px';
@@ -25,10 +25,9 @@ export default async (e) => {
   commentsField.style.borderRadius = '5px';
   commentsField.style.zIndex = '2';
   commentsField.style.position = 'relative';
-  commentsField.style.float = 'left';
   commentsField.style.backgroundColor = 'whitesmoke';
-  //   body.style.overflow = 'hidden';
-  //   currentComments.appendChild(commentsField);
+    body.style.overflow = 'hidden';
+    currentComments.appendChild(commentsField);
 
   commentsField.onclick = () => {
     body.style.overflow = 'visible';
@@ -37,11 +36,11 @@ export default async (e) => {
 };
 
 const createUl = (comments) => {
-  const ul = document.createElement('ul');
+  const ul = document.createElement('div');
   ul.className = 'commentsField';
   ul.innerHTML = comments.map((c) => {
-    console.log(comments);
-    return `<li>${c}</li>`;
+    console.log(c);
+    return c.length > 0 ? `<div> --- ${c.trim()}</div>` : null;
   });
   console.log(ul);
   return ul;

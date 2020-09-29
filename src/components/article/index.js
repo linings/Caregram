@@ -61,19 +61,13 @@ const Article = ({ imageURL, description, ownerName, likes, objectId }) => {
       </div>
       <div>
         <button
-          onClick={(e) => commentsField(e,)}
+          onClick={(e) => commentsField(e)}
           className={styles.viewCommentsBtn}
         >
           View All Comments
         </button>
       </div>
-      <input
-        id="commentInput"
-        className={styles.commentInput}
-        type="text"
-        placeholder="comment..."
-        onChange={(e) => setAddComment(e.target.value)}
-      />
+
       {locator.pathname === '/myStories' ? (
         <Button
           variant="outline-danger"
@@ -83,9 +77,18 @@ const Article = ({ imageURL, description, ownerName, likes, objectId }) => {
           Delete
         </Button>
       ) : (
-        <Button variant="outline-info" onClick={submitComment}>
-          add comment:
-        </Button>
+        <div>
+          <input
+            id="commentInput"
+            className={styles.commentInput}
+            type="text"
+            placeholder="comment..."
+            onChange={(e) => setAddComment(e.target.value)}
+          />
+          <Button variant="outline-info" onClick={submitComment}>
+            add comment:
+          </Button>
+        </div>
       )}
     </div>
   );
