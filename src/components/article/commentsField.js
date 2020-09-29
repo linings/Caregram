@@ -1,4 +1,3 @@
-import React from 'react';
 import getAllComments from './getAllComments';
 
 export default async (e) => {
@@ -14,7 +13,10 @@ export default async (e) => {
 
   const body = document.getElementsByTagName('body')[0];
   comments = comments.split(',');
-  commentsField.innerHTML = `<ul class="commentsField">${comments.join('--- \n')}</ul>`;
+
+  const outputList = createUl(comments);
+
+  currentComments.appendChild(outputList);
   commentsField.style.width = '600px';
   commentsField.style.height = '600px';
   commentsField.style.marginTop = '-650px';
@@ -25,11 +27,22 @@ export default async (e) => {
   commentsField.style.position = 'relative';
   commentsField.style.float = 'left';
   commentsField.style.backgroundColor = 'whitesmoke';
-  body.style.overflow = 'hidden';
-  currentComments.appendChild(commentsField);
+  //   body.style.overflow = 'hidden';
+  //   currentComments.appendChild(commentsField);
 
   commentsField.onclick = () => {
     body.style.overflow = 'visible';
     commentsField.style.display = 'none';
   };
+};
+
+const createUl = (comments) => {
+  const ul = document.createElement('ul');
+  ul.className = 'commentsField';
+  ul.innerHTML = comments.map((c) => {
+    console.log(comments);
+    return `<li>${c}</li>`;
+  });
+  console.log(ul);
+  return ul;
 };
