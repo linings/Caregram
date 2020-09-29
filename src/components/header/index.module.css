@@ -1,0 +1,47 @@
+.navigation {
+  width: 100%;
+  height: 150px;
+  background-color: white;
+  color: white;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  margin-top: 0px;
+  border-bottom: 2px solid grey;
+  border-top: 2px solid grey;
+}
+.logo {
+  position: absolute;
+  top: -5px;
+  height: 150px;
+  width: 180px;
+  left: 15px;
+  padding-left: 50px;
+}
+.wrapper {
+  width: 1000px;
+  margin-left: 530px;
+}
+.link {
+  color: grey;
+  text-decoration: none;
+  display: block;
+  list-style-type: none;
+  margin: 15px;
+  padding: 15px;
+  margin-top: -63px;
+  margin-left: 450px;
+  border: 0px;
+  background-color: white;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  cursor: pointer;
+  font-size: 15px;
+}
+.link:hover {
+  border-left: none;
+  border-right: none;
+  border-top: 2px solid purple;
+  border-bottom: 2px solid purple;
+  color: palevioletred;
+}

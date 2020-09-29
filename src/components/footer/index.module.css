@@ -1,0 +1,14 @@
+.container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: white;
+  text-align: center;
+  border-bottom: 2px solid grey;
+  border-top: 2px solid grey;
+  color: grey;
+  text-decoration: none;
+  z-index: 1;
+}

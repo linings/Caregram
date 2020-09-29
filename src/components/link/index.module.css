@@ -1,0 +1,22 @@
+.link {
+  color: grey;
+  text-decoration: none;
+  display: block;
+  list-style-type: none;
+  font-weight: bold;
+  margin: 15px;
+  padding: 15px;
+  margin-top: 70px;
+}
+.link:hover {
+  border-left: none;
+  border-right: none;
+  border-top: 2px solid purple;
+  border-bottom: 2px solid purple;
+  color: palevioletred;
+}
+.list-item {
+  display: inline-block;
+  border-top: none;
+  list-style-type: none;
+}
