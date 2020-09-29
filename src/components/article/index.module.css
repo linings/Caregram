@@ -41,3 +41,19 @@
   margin-bottom: 5px;
   border-radius: 5px;
 }
+.likesWrapper {
+  border-bottom: 1px solid grey;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+.likesBtn {
+  margin-right: 76%;
+}
+.commentsField {
+  width: 200px;
+  height: 200px;
+  z-index: 1;
+  border: 1px solid grey;
+  margin-left: 200px;
+}
