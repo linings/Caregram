@@ -26,7 +26,6 @@ const Auth = (props) => {
       loggedIn: false,
     });
   };
-
   useEffect(() => {
     const token = getCookie('x-auth-token');
 
@@ -46,14 +45,15 @@ const Auth = (props) => {
       },
       (e) => {
         console.log('Error', e);
-      }
+      },
+      setLoading
     );
-    setLoading(false);
   }, []);
 
   if (loading) {
     return <Spinner animation="border" variant="info" />;
   }
+
   return (
     <UserContext.Provider
       value={{

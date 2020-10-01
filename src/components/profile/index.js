@@ -13,8 +13,6 @@ const Profile = () => {
 
   const url = 'https://api.cloudinary.com/v1_1/dv4aswoyi/image/upload';
 
-  console.log(context);
-
   const addProfilePic = () => {
     const { ownerName, ownerId, formData } = saveImageInDatabase();
 

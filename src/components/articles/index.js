@@ -5,14 +5,20 @@ import styles from './index.module.css';
 import API from '../../REST API';
 import Article from '../article';
 import getCookie from '../../utils/cookie';
+import Spinner from 'react-bootstrap/Spinner';
 
 const Articles = () => {
   let [articles, setArticles] = useState([]);
   const locator = useLocation();
+  let [loading, setLoading] = useState(true);
 
   const getArticles = async () => {
     const response = await fetch(API.name + `data/data`);
     const result = await response.json();
+
+    if (result) {
+      setLoading(false);
+    }
 
     setArticles(result);
   };
@@ -32,6 +38,9 @@ const Articles = () => {
   useEffect(() => {
     getArticles();
   }, []);
+  if (loading) {
+    return <Spinner animation="border" variant="info" />;
+  }
 
   return <div className={styles.content}>{renderArticles()}</div>;
 };

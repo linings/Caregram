@@ -32,7 +32,7 @@ const Article = ({ imageURL, description, ownerName, likes, objectId }) => {
       return;
     }
     e.target.parentNode.children[0].value = '';
-    objectId = e.target.parentNode.id;
+    objectId = e.target.parentNode.parentNode.id;
     let comments = await getAllComments(objectId, comment);
     commentsToDisplay = comments.split(',');
     setDisplayComments(commentsToDisplay);

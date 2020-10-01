@@ -1,4 +1,4 @@
-const authenticate = async (url, body, onSuccess, onFailure) => {
+const authenticate = async (url, body, onSuccess, onFailure, setLoading) => {
   const { username, password, rePassword } = body;
 
   if (rePassword) {
@@ -51,6 +51,9 @@ const authenticate = async (url, body, onSuccess, onFailure) => {
     });
   } else {
     onFailure();
+  }
+  if (setLoading) {
+    setLoading(false);
   }
 };
 export default authenticate;

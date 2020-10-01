@@ -26,8 +26,8 @@ export default async (e) => {
   commentsField.style.zIndex = '2';
   commentsField.style.position = 'relative';
   commentsField.style.backgroundColor = 'whitesmoke';
-    // body.style.overflow = 'hidden';
-    currentComments.appendChild(commentsField);
+  // body.style.overflow = 'hidden';
+  currentComments.appendChild(commentsField);
 
   commentsField.onclick = () => {
     body.style.overflow = 'visible';
@@ -39,9 +39,7 @@ const createUl = (comments) => {
   const ul = document.createElement('div');
   ul.className = 'commentsField';
   ul.innerHTML = comments.map((c) => {
-    console.log(c);
     return c.length > 0 ? `<div> --- ${c.trim()}</div>` : null;
   });
-  console.log(ul);
   return ul;
 };
