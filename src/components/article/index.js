@@ -28,10 +28,10 @@ const Article = ({ imageURL, description, ownerName, likes, objectId }) => {
   };
 
   const submitComment = async (e) => {
-    if (e.target.parentNode.children[6].value.length === 0) {
+    if (e.target.parentNode.children[0].value.length === 0) {
       return;
     }
-    e.target.parentNode.children[6].value = '';
+    e.target.parentNode.children[0].value = '';
     objectId = e.target.parentNode.id;
     let comments = await getAllComments(objectId, comment);
     commentsToDisplay = comments.split(',');

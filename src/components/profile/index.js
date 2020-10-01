@@ -13,6 +13,8 @@ const Profile = () => {
 
   const url = 'https://api.cloudinary.com/v1_1/dv4aswoyi/image/upload';
 
+  console.log(context);
+
   const addProfilePic = () => {
     const { ownerName, ownerId, formData } = saveImageInDatabase();
 
@@ -44,7 +46,8 @@ const Profile = () => {
 
   return (
     <div className={styles['wrapper-profile']}>
-      <h4>Profile</h4>
+      <h4>Profile:</h4>
+      <i>{context.user ? context.user.username : null} </i>
       <img
         id="img"
         className={styles.uploadedImg}

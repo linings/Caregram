@@ -26,7 +26,7 @@ export default async (e) => {
   commentsField.style.zIndex = '2';
   commentsField.style.position = 'relative';
   commentsField.style.backgroundColor = 'whitesmoke';
-    body.style.overflow = 'hidden';
+    // body.style.overflow = 'hidden';
     currentComments.appendChild(commentsField);
 
   commentsField.onclick = () => {
